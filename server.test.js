@@ -27,4 +27,16 @@ describe('Server', () => {
         });
     });
   });
+
+  describe('[GET] /bands', () => {
+    it('should return `all bands`', () => {
+      chai.request(server)
+        .get('/bands')
+        .end((err, res) => {
+          if (err) console.error(err);
+          expect(res.status).to.equal(200);
+          expect(res.body).to.equal('all bands');
+        });
+    });
+  });
 });

@@ -16,4 +16,17 @@ describe('Bands', () => { // Bands test suite
       expect(band.getBandName()).to.equal('Cool Band Name');
     });
   });
+  describe('getAllBands', () => {
+    it('should get all bands', () => {
+      sinon.stub(Band, 'find');
+      Band.find.yields([
+        { name: 'Way Cool Band', genre: 'Way Awesome genre', },
+        { name: 'The Coolest', genre: 'The Coolest genre', }
+      ]);
+      Band.getAllBands((bands) => {
+        expect(bands.length).to.equal(2);
+        expect(bands[0].name).to.equal('Way Cool Band');
+      })
+    })
+  })
 });

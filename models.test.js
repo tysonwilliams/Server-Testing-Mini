@@ -26,7 +26,7 @@ describe('Bands', () => { // Bands test suite
       Band.getAllBands((bands) => {
         expect(bands.length).to.equal(2);
         expect(bands[0].name).to.equal('Way Cool Band');
-      })
-    })
-  })
+      });
+    });
+  });
 });

@@ -16,4 +16,14 @@ BandSchema.methods.getBandName = function() {
   return this.name;
 };
 
-module.exports = mongoose.model('Band', BandSchema);
+BandSchema.statics.getAllBands = (cb) => {
+  Band.find({}, (err, bands) => {
+    if (err) console.error(err);
+    console.log('------>>>>>>', bands);
+    cb(bands);
+  });
+};
+
+const Band = mongoose.model('Band', BandSchema);
+
+module.exports = Band;

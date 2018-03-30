@@ -19,7 +19,7 @@ describe('Bands', () => { // Bands test suite
   describe('getAllBands', () => {
     it('should get all bands', () => {
       sinon.stub(Band, 'find');
-      Band.find.yields([
+      Band.find.yields(null, [
         { name: 'Way Cool Band', genre: 'Way Awesome genre', },
         { name: 'The Coolest', genre: 'The Coolest genre', }
       ]);

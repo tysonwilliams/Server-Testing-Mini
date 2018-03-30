@@ -19,7 +19,6 @@ BandSchema.methods.getBandName = function() {
 BandSchema.statics.getAllBands = (cb) => {
   Band.find({}, (err, bands) => {
     if (err) console.error(err);
-    console.log('------>>>>>>', bands);
     cb(bands);
   });
 };
